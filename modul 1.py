@@ -1,8 +1,19 @@
 numbers = int(input("Введите ключ: "))
-numbers_list = [int(digit) for digit in str(numbers)]
+stealth = 0
+stealth_list = 0
+carculated = 0
 numbers_result = []
-for i in range(0, len(numbers_list), 2):
-  if i + 1 < len(numbers_list):
-    print(numbers_list[i] + numbers_list[i + 1])
-    numbers_result.append(numbers_list[i] + numbers_list[i + 1])
-print(numbers_result)
+for i in range(0, numbers):
+  for j in range(numbers):
+      if i <= j:
+          if i == j:
+              stealth_list = stealth + 1
+          else:
+               carculated = i + j
+               if numbers % carculated == 0:
+                   if i == 0:
+                       stealth_list = stealth + 1
+                   else:
+                       numbers_result.append(i)
+                       numbers_result.append(j)
+print(''.join(str(x) for x in numbers_result))
